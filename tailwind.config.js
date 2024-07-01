@@ -6,7 +6,14 @@ module.exports = {
   darkMode: false,
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'Kumbh': ['KumbhSans', 'sans-serif'],
+      },
+      fontWeight: {
+        bold: '700',
+      },
+    },
   },
   plugins: [],
 }
