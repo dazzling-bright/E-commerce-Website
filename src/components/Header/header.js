@@ -5,7 +5,6 @@ import AvatarImage from "../../images/header/image-avatar.png";
 
 import NavContent from "./NavContent";
 
-
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -14,11 +13,11 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between p-2 relative">
+    <header className="flex items-center justify-between p-4 md:p-8 relative">
       {/* Logo and Brand name */}
       <div className="flex items-center">
         <img
-          className="mr-2 cursor-pointer pt-1 hover:opacity-85 transition-opacity duration-300"
+          className="mr-2 cursor-pointer pt-1 hover:opacity-85 transition-opacity md:hidden duration-300"
           src={MenuIcon}
           alt=""
           onClick={handleMenuDisplay}
@@ -30,7 +29,7 @@ const Header = () => {
       <NavContent isOpen={showMenu} handleMenuDisplay={handleMenuDisplay} />
 
       {/* Cart and Avatar */}
-      <div className="flex items-center px-2 w-[20%] justify-between">
+      <div className="flex items-center px-2 w-[15%] justify-evenly">
         <img src={CartIcon} alt="Cart" className="mr-2 cursor-pointer" />
         <img
           src={AvatarImage}
@@ -40,6 +39,6 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
 export default Header;
