@@ -9,30 +9,16 @@ import ItemPrice from "./itemPrice";
 import ItemDescription from "./itemDescription";
 import ImageCarousel from "./itemFigure";
 
-import CartInfo from "./cartInfo";
 
-const MainContent = () => {
+const MainContent = ({
+  itemValue,
+  handleAddItem,
+  handleSubtractItem,
+  handleChange,
+  handleAddToCart,
+}) => {
   const images = [ProductOne, ProductTwo, ProductThree, ProductFour];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [itemValue, setItemValue] = useState(0);
-  const [showCartInfo, setShowCartInfo] = useState(false);
-
-  const handleChange = (event) => {
-    const value = parseInt(event.target.value, 10);
-    setItemValue(isNaN(value) ? 0 : value);
-  };
-
-  const handleAddItem = () => {
-    setItemValue((prevValue) => prevValue + 1);
-  };
-
-  const handleSubtractItem = () => {
-    setItemValue((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
-  };
-
-  const handleCloseCart = () => {
-    setShowCartInfo(false);
-  };
 
   return (
     <main className="flex flex-col md:flex-row md:gap-4 lg:gap-8 justify-center items-center text-xl md:mt-32 md:px-8 relative">
@@ -51,10 +37,8 @@ const MainContent = () => {
           handleSubtractItem={handleSubtractItem}
           handleChange={handleChange}
         />
-        <AddToCart />
+        <AddToCart handleAddToCart={handleAddToCart} />
       </section>
-
-      {showCartInfo && <CartInfo handleClose={handleCloseCart} />}
     </main>
   );
 };

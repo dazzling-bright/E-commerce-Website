@@ -5,20 +5,18 @@ import AvatarImage from "../../images/header/image-avatar.png";
 import CartInfo from "./body/cartInfo";
 import NavContent from "./NavContent";
 
-const Header = () => {
+const Header = ({
+  cartItems,
+  showCartInfo,
+  handleCartClick,
+  handleCloseCart,
+  handleClearCart,
+  handleRemoveItem,
+}) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showCartInfo, setShowCartInfo] = useState(false);
 
   const handleMenuDisplay = () => {
     setShowMenu(!showMenu);
-  };
-
-  const handleCartClick = () => {
-    setShowCartInfo(!showCartInfo);
-  };
-
-  const handleCloseCart = () => {
-    setShowCartInfo(false);
   };
 
   return (
@@ -54,7 +52,14 @@ const Header = () => {
       </div>
 
       {/* Conditionally render CartInfo */}
-      {showCartInfo && <CartInfo handleClose={handleCloseCart} />}
+      {showCartInfo && (
+        <CartInfo
+          itemValue={cartItems}
+          handleClose={handleCloseCart}
+          handleClearCart={handleClearCart}
+          handleRemoveItem={handleRemoveItem}
+        />
+      )}
     </header>
   );
 };
