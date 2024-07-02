@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import MenuIcon from "../../images/header/icon-menu.svg";
 import CartIcon from "../../images/header/icon-cart.svg";
 import AvatarImage from "../../images/header/image-avatar.png";
-
+import CartInfo from "./body/cartInfo";
 import NavContent from "./NavContent";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isCartHovered, setIsCartHovered] = useState(false);
 
   const handleMenuDisplay = () => {
     setShowMenu(!showMenu);
   };
 
+  const handleCartHover = (isHovered) => {
+    setIsCartHovered(isHovered);
+  };
+
   return (
-    <header className="flex items-center justify-between p-4 pr-8 md:p-8 relative">
+    <header className="border-y-4 flex items-center justify-between p-4 pr-8 md:p-8 relative">
       {/* Logo and Brand name */}
       <div className="flex items-center">
         <img
@@ -29,14 +34,22 @@ const Header = () => {
       <NavContent isOpen={showMenu} handleMenuDisplay={handleMenuDisplay} />
 
       {/* Cart and Avatar */}
-      <div className="flex items-center px-2 w-[15%] justify-evenly">
+      <div
+        className="flex relative items-center px-2 w-[15%] justify-evenly"
+        onMouseEnter={() => handleCartHover(true)}
+        onMouseLeave={() => handleCartHover(false)}
+      >
         <img src={CartIcon} alt="Cart" className="mr-2 cursor-pointer" />
+
         <img
           src={AvatarImage}
           alt="Avatar"
           className="object-cover w-10 h-10 cursor-pointer"
         />
       </div>
+
+      {/* Conditionally render CartInfo */}
+      {isCartHovered && <CartInfo />}
     </header>
   );
 };

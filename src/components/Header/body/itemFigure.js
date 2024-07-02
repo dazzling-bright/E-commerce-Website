@@ -11,7 +11,7 @@ const ItemFigure = ({
   setCurrentImageIndex,
 }) => {
   return (
-    <figure className="overflow-hidden md:w-1/2">
+    <figure className="overflow-hidden z-[-2] w-full md:w-1/2">
       <div className="relative">
         <img
           className="h-full w-full block rounded-2xl mb-4 max-h-[600px] md:max-h-[400px] object-cover"

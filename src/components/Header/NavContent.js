@@ -20,7 +20,7 @@ const NavContent = ({ isOpen, handleMenuDisplay }) => {
         {listItems.map((item, index) => (
           <li
             key={index}
-            className="md:mt-2 mt-4 font-bold text-xl cursor-pointer transition-opacity duration-300 hover:opacity-80"
+            className="md:mt-2 mt-4 mb-0 font-bold text-xl cursor-pointer transition-opacity duration-300 hover:opacity-80"
           >
             {item}
           </li>
