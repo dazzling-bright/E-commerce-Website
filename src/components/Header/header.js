@@ -13,11 +13,11 @@ const Header = () => {
   };
 
   return (
-    <header className="flex items-center justify-between p-4 md:p-8 relative">
+    <header className="flex items-center justify-between p-4 pr-8 md:p-8 relative">
       {/* Logo and Brand name */}
       <div className="flex items-center">
         <img
-          className="mr-2 cursor-pointer pt-1 hover:opacity-85 transition-opacity md:hidden duration-300"
+          className="w-8 h-8 mr-4 cursor-pointer pt-1 hover:opacity-85 transition-opacity md:hidden duration-300"
           src={MenuIcon}
           alt=""
           onClick={handleMenuDisplay}
