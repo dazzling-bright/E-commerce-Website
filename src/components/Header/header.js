@@ -7,14 +7,18 @@ import NavContent from "./NavContent";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [isCartHovered, setIsCartHovered] = useState(false);
+  const [showCartInfo, setShowCartInfo] = useState(false);
 
   const handleMenuDisplay = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleCartHover = (isHovered) => {
-    setIsCartHovered(isHovered);
+  const handleCartClick = () => {
+    setShowCartInfo(!showCartInfo);
+  };
+
+  const handleCloseCart = () => {
+    setShowCartInfo(false);
   };
 
   return (
@@ -34,12 +38,13 @@ const Header = () => {
       <NavContent isOpen={showMenu} handleMenuDisplay={handleMenuDisplay} />
 
       {/* Cart and Avatar */}
-      <div
-        className="flex relative items-center px-2 w-[15%] justify-evenly"
-        onMouseEnter={() => handleCartHover(true)}
-        onMouseLeave={() => handleCartHover(false)}
-      >
-        <img src={CartIcon} alt="Cart" className="mr-2 cursor-pointer" />
+      <div className="flex relative items-center px-2 w-[15%] justify-evenly">
+        <img
+          src={CartIcon}
+          alt="Cart"
+          className="mr-2 cursor-pointer"
+          onClick={handleCartClick}
+        />
 
         <img
           src={AvatarImage}
@@ -49,7 +54,7 @@ const Header = () => {
       </div>
 
       {/* Conditionally render CartInfo */}
-      {isCartHovered && <CartInfo />}
+      {showCartInfo && <CartInfo handleClose={handleCloseCart} />}
     </header>
   );
 };

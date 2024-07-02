@@ -1,16 +1,21 @@
-import AddToCart from "./addToCart";
+import React from "react";
+import CloseIcon from "../../../images/header/icon-close.svg";
 
-const CartInfo = () => {
+const CartInfo = ({ handleClose }) => {
   return (
-    <aside className="flex flex-col leading-8 absolute max-w-4xl w-full md:w-1/2 px-8 py-4 rounded-2xl top-full right-[20%] mt-2 bg-white border ">
-      <p>
-        <p className="md:text-nowrap">
-          Fall Limited Edition Sneakers $125.00 * 3
-        </p>
-        <span className="font-bold">$375.00</span>
-      </p>
-      <AddToCart text="Checkout" showImage={false} />
-    </aside>
+    <section className="flex flex-col leading-8 absolute z-50 max-w-4xl w-5/6 left-0 right-0 md:w-1/2 px-8 py-4 rounded-2xl top-full mt-2 mx-auto bg-white border">
+      {/* Close icon */}
+      <img
+        src={CloseIcon}
+        alt="Close"
+        className="cursor-pointer absolute top-2 right-2"
+        onClick={handleClose}
+      />
+
+      {/* Cart content */}
+      <h3 className="text-lg font-bold mb-2">Cart</h3>
+      <p>Your cart is currently empty.</p>
+    </section>
   );
 };
 

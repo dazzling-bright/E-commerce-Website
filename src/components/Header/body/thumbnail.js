@@ -1,3 +1,4 @@
+import React from "react";
 import ThumbnailOne from "../../../images/body/thumbnails/image-product-1-thumbnail.jpg";
 import ThumbnailTwo from "../../../images/body/thumbnails/image-product-2-thumbnail.jpg";
 import ThumbnailThree from "../../../images/body/thumbnails/image-product-3-thumbnail.jpg";
@@ -11,6 +12,10 @@ const Thumbnail = ({ currentImageIndex, setCurrentImageIndex }) => {
     { name: ThumbnailFour, desc: "thumbnail 4" },
   ];
 
+  const handleThumbnailClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <figure className="hidden md:flex p-2 justify-between gap-2">
       {imgArray.map((item, index) => {
@@ -21,7 +26,7 @@ const Thumbnail = ({ currentImageIndex, setCurrentImageIndex }) => {
             className={`relative w-1/5 rounded-2xl overflow-hidden cursor-pointer transition-all duration-100 ${
               isActive ? "border-4 border-orange" : ""
             }`}
-            onClick={() => setCurrentImageIndex(index)}
+            onClick={() => handleThumbnailClick(index)}
           >
             <img
               className="w-full h-full object-cover rounded-2xl p-1"
