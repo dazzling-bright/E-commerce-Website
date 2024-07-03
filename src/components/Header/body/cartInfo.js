@@ -28,16 +28,21 @@ const CartInfo = ({
               onClick={handleClearCart}
               showImage={false}
               text="Clear Cart"
+              className="text-pale-orange"
             />
             <Button
               onClick={handleRemoveItem}
               showImage={false}
               text="Remove Item"
-              className="text-white "
+              className="text-pale-orange"
             />
           </div>
           <>
-            <Button showImage={false} text="Checkout" />
+            <Button
+              showImage={false}
+              text="Checkout"
+              className="text-pale-orange"
+            />
           </>
         </div>
       ) : (

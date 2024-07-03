@@ -14,7 +14,7 @@ const CartInput = ({
         src={AddItemIcon}
         alt="Add Item"
         onClick={handleAddItem}
-        className="bg-slate-100 px-4 py-6 shadow-sm rounded-lg hover:cursor-pointer"
+        className="shadow-ld bg-slate-300 px-4 py-6  rounded-lg hover:cursor-pointer"
       />
 
       <input
@@ -29,7 +29,7 @@ const CartInput = ({
         src={SubtractItemIcon}
         alt="Subtract Item"
         onClick={handleSubtractItem}
-        className="hover:cursor-pointer shadow-sm rounded-lg bg-slate-100 py-6 px-4 self-stretch object-contain"
+        className="hover:cursor-pointer shadow-sm rounded-lg bg-slate-300 py-6 px-4 self-stretch object-contain"
       />
     </div>
   );

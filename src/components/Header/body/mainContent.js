@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddToCart from "./addToCart";
+import Button from "./addToCart";
 import ProductOne from "../../../images/body/product-1.jpg";
 import ProductTwo from "../../../images/body/product-2.jpg";
 import ProductThree from "../../../images/body/product-3.jpg";
@@ -8,7 +8,6 @@ import CartInput from "./cartInput";
 import ItemPrice from "./itemPrice";
 import ItemDescription from "./itemDescription";
 import ImageCarousel from "./itemFigure";
-
 
 const MainContent = ({
   itemValue,
@@ -37,7 +36,7 @@ const MainContent = ({
           handleSubtractItem={handleSubtractItem}
           handleChange={handleChange}
         />
-        <AddToCart handleAddToCart={handleAddToCart} />
+        <Button handleAddToCart={handleAddToCart} />
       </section>
     </main>
   );

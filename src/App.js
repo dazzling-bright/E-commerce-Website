@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header/header";
 import MainContent from "./components/Header/body/mainContent";
-import CartInfo from "./components/Header/body/cartInfo";
 
 function App() {
   const [itemValue, setItemValue] = useState(0);
@@ -55,12 +54,7 @@ function App() {
         handleClearCart={handleClearCart}
         handleRemoveItem={handleRemoveItem}
       />
-      <CartInfo
-        itemValue={cartItems}
-        handleClose={handleCloseCart}
-        handleClearCart={handleClearCart}
-        handleRemoveItem={handleRemoveItem}
-      />
+
       <MainContent
         itemValue={itemValue}
         handleAddItem={handleAddItem}
