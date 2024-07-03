@@ -20,7 +20,7 @@ const Header = ({
   };
 
   return (
-    <header className="border-y-4 flex items-center justify-between p-4 pr-8 md:p-8 relative">
+    <header className="border-y-4 flex items-center justify-between p-4 md:p-0 pr-8  relative">
       {/* Logo and Brand name */}
       <div className="flex items-center">
         <img
@@ -47,7 +47,7 @@ const Header = ({
         <img
           src={AvatarImage}
           alt="Avatar"
-          className="object-cover w-10 h-10 cursor-pointer"
+          className="object-cover w-10 h-10 cursor-pointer hover:border-orange hover:scale-125 border-transparent border-4 rounded-full p-[1px] transition-all duration-200"
         />
       </div>
 

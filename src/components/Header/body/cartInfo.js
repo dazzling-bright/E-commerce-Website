@@ -33,6 +33,7 @@ const CartInfo = ({
               onClick={handleRemoveItem}
               showImage={false}
               text="Remove Item"
+              className="text-white "
             />
           </div>
           <>
