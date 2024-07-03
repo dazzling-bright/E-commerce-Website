@@ -20,14 +20,14 @@ const MainContent = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   return (
-    <main className="flex flex-col md:flex-row md:gap-4 lg:gap-8 justify-center items-center text-xl md:mt-32 md:px-8 relative">
+    <main className="flex flex-col sm:flex-row sm:gap-2 md:gap-4 sm:p-2 lg:gap-8 justify-center items-center text-xl md:mt-8 md:mb-32 md:px-8 relative">
       <ImageCarousel
         images={images}
         currentImageIndex={currentImageIndex}
         setCurrentImageIndex={setCurrentImageIndex}
       />
 
-      <section className="mx-auto px-2 md:px-4 flex flex-col md:w-1/2 gap-4">
+      <section className="mx-auto px-4 md:px-4 flex flex-col sm:w-1/2 gap-4">
         <ItemDescription />
         <ItemPrice />
         <CartInput

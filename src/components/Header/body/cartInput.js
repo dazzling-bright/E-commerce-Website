@@ -9,7 +9,7 @@ const CartInput = ({
   handleChange,
 }) => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center flex-wrap">
       <img
         src={AddItemIcon}
         alt="Add Item"
